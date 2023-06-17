@@ -34,27 +34,32 @@ def poster(movie_id):
     data= response.json()
     return 'https://image.tmdb.org/t/p/w185/'+data["poster_path"]
 # st.write(poster(155))
+def webpage(movie_id):
+    response =requests.get('http://api.themoviedb.org/3/movie/{}?api_key=d7cbcb8365a3c04b0f5687c726a621cd&language=en-US'.format(movie_id))
+    data= response.json()
+    return data["homepage"]
 def recommendation(movie):
     movie_index = movies[movies["title"] == movie].index[0]  # returns movies index in dataframe
     distance = similarity[movie_index]
     movie_list = sorted(list(enumerate(distance)), reverse=True, key=lambda x: x[1])[1:6]
     recomend=[]
     posterlist=[]
+    homepage=[]
     for A in movie_list:
 
         recomend.append(movies.iloc[A[0]].title)
         movie_id = movies.iloc[A[0]].movie_id
         #fetch movie Poster using API of TMBD
         posterlist.append(poster(movie_id))
-
-    return recomend,posterlist
+        homepage.append(webpage(movie_id))
+    return recomend,posterlist,homepage
 
 if st.button("Recommend"):
     recomended,poster_fetch=recommendation(option)
     col1, col2, col3,col4,col5= st.columns(5)
 
     with col1:
-        st.text(recomended[0])
+        st.button(recomended[0],on_click=homepage[0])
         st.image(poster_fetch[0])
 
     with col2:
