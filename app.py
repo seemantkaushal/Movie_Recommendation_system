@@ -55,8 +55,8 @@ def recommendation(movie):
         homepage.append(webpage(movie_id))
     return recomend,posterlist,homepage
 
-recomended,poster_fetch, homepage=recommendation(option)
-st.write(homepage[0])
+# recomended,poster_fetch, homepage=recommendation(option)
+# st.write(homepage[0])
 
 
 if st.button("Recommend"):
