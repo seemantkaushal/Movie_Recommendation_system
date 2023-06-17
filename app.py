@@ -34,6 +34,7 @@ def poster(movie_id):
     data= response.json()
     return 'https://image.tmdb.org/t/p/w185/'+data["poster_path"]
 # st.write(poster(155))
+
 def webpage(movie_id):
     response =requests.get('http://api.themoviedb.org/3/movie/{}?api_key=d7cbcb8365a3c04b0f5687c726a621cd&language=en-US'.format(movie_id))
     data= response.json()
@@ -54,25 +55,67 @@ def recommendation(movie):
         homepage.append(webpage(movie_id))
     return recomend,posterlist,homepage
 
+recomended,poster_fetch, homepage=recommendation(option)
+st.write(homepage[0])
+
+
 if st.button("Recommend"):
-    recomended,poster_fetch=recommendation(option)
+
+    recomended,poster_fetch, homepage=recommendation(option)
+    # st.write(homepage[0])
     col1, col2, col3,col4,col5= st.columns(5)
 
     with col1:
-        st.button(recomended[0],on_click=homepage[0])
+        # st.button(recomended[0],on_click=homepage[0])
+        st.write('''
+                 <a href={0}>
+                 <p>
+                 {1}
+                 </p>
+                 </a>
+                 '''.format("\""+homepage[0]+"\"", recomended[0]),
+                 unsafe_allow_html=True)
         st.image(poster_fetch[0])
 
     with col2:
-        st.text(recomended[1])
+        st.write('''
+                 <a href={0}>
+                 <p>
+                 {1}
+                 </p>
+                 </a>
+                 '''.format("\""+homepage[1]+"\"", recomended[1]),
+                 unsafe_allow_html=True)
         st.image(poster_fetch[1])
 
     with col3:
-        st.text(recomended[2])
+        st.write('''
+                 <a href={0}>
+                 <p>
+                 {1}
+                 </p>
+                 </a>
+                 '''.format("\""+homepage[2]+"\"", recomended[2]),
+                 unsafe_allow_html=True)
         st.image(poster_fetch[2])
 
     with col4:
-        st.text(recomended[3])
+        st.write('''
+                 <a href={0}>
+                 <p>
+                 {1}
+                 </p>
+                 </a>
+                 '''.format("\""+homepage[3]+"\"", recomended[3]),
+                 unsafe_allow_html=True)
         st.image(poster_fetch[3])
     with col5:
-        st.text(recomended[4])
+        st.write('''
+                 <a href={0}>
+                 <p>
+                 {1}
+                 </p>
+                 </a>
+                 '''.format("\""+homepage[4]+"\"", recomended[4]),
+                 unsafe_allow_html=True)
         st.image(poster_fetch[4])
