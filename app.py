@@ -11,8 +11,15 @@ background-image:
 url('https://th.bing.com/th/id/OIP.ihRM-KXt4H2VF-EOtESd1gHaHU?pid=ImgDet&rs=1');
 background-size:100%;
 color:white;
+font-size:15px;
+background-color: rgb(93 17 17);
 font-weight:bolder;
 }}
+.css-1n543e5
+{{
+        background-color: rgb(93 17 17);
+}}
+
 
 </style>
 """,
