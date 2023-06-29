@@ -1,3 +1,2 @@
 ﻿requests==2.31.0
 streamlit==1.23.1
-pickle4==4 0.0.1
