@@ -14,3 +14,9 @@ and on the basis of this the movies are recommended for the selected movie.
 I have also used the TMBD Api for the fetch of poster of movies based on their movie_id .
 reffer the TMBD.api for the futher reffernce .
 
+Hosted the project using the streamlit share 
+
+#Url = https://movierecommendationsystem-iu0oi5d48xo.streamlit.app/
+
+any feadback is apreciated .
+
