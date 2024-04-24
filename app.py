@@ -1,4 +1,5 @@
 import streamlit as st
+import gdown
 import pandas as pd
 import pickle
 import requests
@@ -24,6 +25,22 @@ font-weight:bolder;
 </style>
 """,
             unsafe_allow_html=True)
+
+
+# URLs for the files on Google Drive
+# URLs for the files on Google Drive
+movies_url =  'https://drive.google.com/uc?id=1_zb0dEjbBnpoiVAXY1tJ8H3dB4XCMNyr'
+
+similarity_url = 'https://drive.google.com/uc?id=1aN88uWER1DKVOoPnR4ycd2Q9sS-yu8Ln'
+
+movies_file_path = 'movies.pkl'
+similarity_file_path = 'similarity.pkl'
+
+
+# Download the files from Google Drive
+gdown.download(movies_url, movies_file_path, quiet=False)
+gdown.download(similarity_url, similarity_file_path, quiet=False)
+
 
 movies=pd.DataFrame(pickle.load(open("movies.pkl","rb")))
 similarity=pickle.load(open("similarity.pkl","rb"))
