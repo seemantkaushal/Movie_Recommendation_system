@@ -1,4 +1,5 @@
 ﻿requests==2.31.0
 streamlit==1.23.1
 gdown==5.1.0
-pickle
+pickle4==0.0.1
+pickleshare==0.7.5
