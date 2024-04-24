@@ -16,7 +16,7 @@ reffer the TMBD.api for the futher reffernce .
 
 Hosted the project using the streamlit share 
 
-#Url = https://movierecommendationsystem-iu0oi5d48xo.streamlit.app/
+#Url = [https://movierecommendationsystem-iu0oi5d48xo.streamlit.app/](https://movierecommendationsystem-ehnsgearnaxb4bxlshsnxl.streamlit.app/)
 
 any feadback is apreciated .
 
